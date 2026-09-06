@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/styles.css">
+</head>
+
+
+<body>
+    <div class="hero">
+    <div class="head">
+     
+         
+        <h2>Dog breed image generator</h2>
+        <form action="/dogger" method="post"> 
+        <input type="text" name="dog" required placeholder="Enter dog breed..." >
+          <button type="submit">submit</button>            
+        </form>
+           <% if (locals.content) { %>
+       <%- content %> 
+     <!---- <a href="" id="imager" download>Download Here</a>--->
+        <% } %>
+    </div>
+    <div class="bottom">
+        
+         
+        <h2>Gender generator</h2>
+        <form action="/namer" method="post"> 
+        <input type="text" name="name" required placeholder="Enter your name..." >
+          <button type="submit">submit</button>            
+        </form>
+              <% if (locals.contained) { %>
+      <%- contained %>
+        <% } %>
+    </div>
+    </div>
+
+
+   <!--- <script>
+      const imager = document.getElementById("imager");
+      const stick = document.getElementsByClassName("stick")[0];
+      
+ async function makeDownloadable(imageUrl) {
+  const response = await fetch(imageUrl);
+  const blob = await response.blob();
+  const blobUrl = URL.createObjectURL(blob);
+  imager.setAttribute("href", blobUrl);
+}
+
+   makeDownloadable(stick.src);
+    </script> ---->
+</body>
+</html>
